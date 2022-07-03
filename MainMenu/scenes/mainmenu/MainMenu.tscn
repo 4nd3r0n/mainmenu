@@ -132,10 +132,11 @@ custom_fonts/font = ExtResource( 4 )
 
 [node name="Control" parent="Margin/HBoxContainer/VBoxContainer" instance=ExtResource( 6 )]
 visible = false
-margin_left = -60.0
-margin_top = -20.0
-margin_right = -60.0
-margin_bottom = -20.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 535.0
+margin_right = 364.0
+margin_bottom = 535.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Margin/HBoxContainer/VBoxContainer"]
 visible = false
@@ -199,6 +200,77 @@ margin_bottom = 21.0
 custom_fonts/font = ExtResource( 5 )
 text = "Hello World"
 align = 2
+
+[node name="ConfirmContainer" type="MarginContainer" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -132.5
+margin_top = -74.0
+margin_right = 132.5
+margin_bottom = 74.0
+
+[node name="CenterContainer" type="CenterContainer" parent="ConfirmContainer"]
+margin_right = 265.0
+margin_bottom = 148.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="ConfirmContainer"]
+margin_right = 265.0
+margin_bottom = 148.0
+color = Color( 0.0588235, 0.0470588, 0.117647, 0.588235 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ConfirmContainer"]
+margin_right = 265.0
+margin_bottom = 148.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="ConfirmContainer/VBoxContainer"]
+margin_right = 265.0
+margin_bottom = 21.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 5 )
+text = "Confirm Exit"
+align = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="ConfirmContainer"]
+margin_right = 265.0
+margin_bottom = 148.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ConfirmContainer/VBoxContainer2"]
+margin_right = 265.0
+margin_bottom = 148.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CancelButton" type="Button" parent="ConfirmContainer/VBoxContainer2/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 148.0
+focus_mode = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 4 )
+enabled_focus_mode = 0
+text = "Cancel"
+flat = true
+
+[node name="ConfirmButton" type="Button" parent="ConfirmContainer/VBoxContainer2/HBoxContainer"]
+margin_left = 134.0
+margin_right = 265.0
+margin_bottom = 148.0
+focus_mode = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 4 )
+enabled_focus_mode = 0
+text = "Exit"
+flat = true
 
 [connection signal="pressed" from="Margin/HBoxContainer/VBoxContainer/HBoxContainer/ButtonsContainer/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="Margin/HBoxContainer/VBoxContainer/HBoxContainer/ButtonsContainer/SettingsButton" to="." method="_on_SettingsButton_pressed"]
